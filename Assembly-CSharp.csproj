@@ -45,7 +45,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scripts\CameraFollow.cs" />
+     <Compile Include="Assets\Scripts\CanvasControl.cs" />
      <Compile Include="Assets\Scripts\CrunchyControl.cs" />
+     <Compile Include="Assets\Scripts\EnemyCollideWall.cs" />
+     <Compile Include="Assets\Scripts\EnemyControl.cs" />
+     <Compile Include="Assets\Scripts\EnemyDefeat.cs" />
+     <Compile Include="Assets\Scripts\PlayButton.cs" />
  <Reference Include="UnityEngine.Networking">
  <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll</HintPath>
  </Reference>

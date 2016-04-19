@@ -5,6 +5,7 @@ public class EnemyDefeat : MonoBehaviour {
 
 	private Animator deathAnim;
 
+
 	// Use this for initialization
 	void Start () {
 		

@@ -27,6 +27,7 @@ public class EnemyDefeat : MonoBehaviour {
 	void OnCollisionEnter2D(Collision2D collision) {
 		if (collision.collider.gameObject.layer == LayerMask.NameToLayer ("Player")) {
 			deathAnim.SetBool ("smashed", true);
+			Debug.Log ("smashed" + deathAnim.GetBool ("smashed"));
 		} 
 	}
 }

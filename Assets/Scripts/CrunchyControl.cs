@@ -41,6 +41,10 @@ public class CrunchyControl : MonoBehaviour {
 		}
 
 		if (collision.collider.gameObject.layer == LayerMask.NameToLayer ("Enemy Top")) {
+			jumpsLeft = 0;
+		}
+
+		if (collision.collider.gameObject.layer == LayerMask.NameToLayer ("Enemy Top")) {
 			myRigidBody.AddForce (transform.up * bunnyJumpForce);
 		}
 	}

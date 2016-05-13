@@ -132,6 +132,7 @@ GameObject:
   - 223: {fileID: 175272105}
   - 114: {fileID: 175272104}
   - 114: {fileID: 175272103}
+  - 114: {fileID: 175272107}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -213,6 +214,17 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &175272107
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 175272102}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c9a26fe9caa7f448a9ba3c687e273975, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &214445105 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 141596, guid: a5d2eb0748cf0495297a8ec728bc9bd7, type: 2}
@@ -243,7 +255,7 @@ GameObject:
   - 114: {fileID: 265880702}
   - 114: {fileID: 265880701}
   m_Layer: 5
-  m_Name: BtnStart
+  m_Name: LevelSelect
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -265,7 +277,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 160, y: 90}
+  m_SizeDelta: {x: 330, y: 90}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &265880701
 MonoBehaviour:
@@ -305,7 +317,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 265880702}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 175272107}
+        m_MethodName: LevelSelect
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &265880702
@@ -320,7 +343,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.9264706, g: 0.10218424, b: 0.10218424, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -1739,7 +1762,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Play
+  m_Text: Level Select
 --- !u!222 &1826735313
 CanvasRenderer:
   m_ObjectHideFlags: 0

@@ -42,8 +42,8 @@ public class CrunchyControl : MonoBehaviour {
 			myAnim.SetBool("Right", false);
 			transform.position += Vector3.left * speed * Time.deltaTime;
 		}
-		Debug.Log ("Jump Time" + jumpTime);
-		Debug.Log ("Prev Jump Time" + prevJumpTime);
+		//Debug.Log ("Jump Time" + jumpTime);
+		//Debug.Log ("Prev Jump Time" + prevJumpTime);
 	}
 
 	void OnCollisionEnter2D(Collision2D collision) {

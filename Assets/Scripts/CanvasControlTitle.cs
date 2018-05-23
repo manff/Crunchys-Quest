@@ -1,6 +1,5 @@
 ﻿using UnityEngine;
 using System.Collections;
-using UnityEngine.SceneManagement;
 
 public class CanvasControlTitle : MonoBehaviour {
 
@@ -15,6 +14,6 @@ public class CanvasControlTitle : MonoBehaviour {
 	}
 
 	public void LevelSelect() {
-		SceneManager.LoadScene ("LevelSelect");
+		Application.LoadLevel ("LevelSelect");
 	}
 }

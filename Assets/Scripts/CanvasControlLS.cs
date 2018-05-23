@@ -1,7 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
-using UnityEngine.SceneManagement;
 
 public class CanvasControlLS : MonoBehaviour {
 
@@ -16,15 +15,7 @@ public class CanvasControlLS : MonoBehaviour {
 	}
 
 	public void OneOne() {
-		SceneManager.LoadScene ("Level1-1");
-	}
-
-	public void OneTwo() {
-		SceneManager.LoadScene ("Level1-2");
-	}
-
-	public void OneTen() {
-		SceneManager.LoadScene ("Level1-10");
+		Application.LoadLevel ("Level1-1");
 	}
 
 }

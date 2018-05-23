@@ -1,16 +1,17 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/EnemyCollideWall.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/CanvasControlLS.cs">
     <Files>
-      <File FileName="Assets/Scripts/CrunchyControl.cs" Line="54" Column="14" />
-      <File FileName="Assets/Scripts/CanvasControl.cs" Line="9" Column="24" />
+      <File FileName="Assets/Scripts/CrunchyControl.cs" Line="95" Column="16" />
+      <File FileName="Assets/Scripts/CanvasControl.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/CameraFollow.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/PlayButton.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/EnemyCollideWall.cs" Line="27" Column="21" />
-      <File FileName="Assets/Scripts/EnemyControl.cs" Line="40" Column="23" />
-      <File FileName="Assets/Scripts/EnemyDefeat.cs" Line="15" Column="1" />
-      <File FileName="Assets/Scripts/CanvasControlLS.cs" Line="18" Column="38" />
+      <File FileName="Assets/Scripts/EnemyCollideWall.cs" Line="27" Column="1" />
+      <File FileName="Assets/Scripts/EnemyControl.cs" Line="16" Column="26" />
+      <File FileName="Assets/Scripts/EnemyDefeat.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/CanvasControlLS.cs" Line="31" Column="1" />
       <File FileName="Assets/Scripts/CanvasControlTitle.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/GrassTadbotControl.cs" Line="26" Column="31" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

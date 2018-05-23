@@ -120,9 +120,12 @@ PlayerSettings:
     16:9: 1
     Others: 1
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
   bundleIdentifier: com.CrunchyInc.CrunchysQuest
 >>>>>>> parent of b60a73e... Revert "Added Working Enemy Death"
+=======
+>>>>>>> parent of 53ef399... Revert "Messed Up"
   bundleVersion: 1.0
   preloadedAssets: []
   metroInputSource: 0

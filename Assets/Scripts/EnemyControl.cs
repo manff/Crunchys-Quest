@@ -3,8 +3,8 @@ using System.Collections;
 
 public class EnemyControl : MonoBehaviour {
 
-	public GameObject enemyTop;
-	EnemyDefeat enemyDead;
+	GameObject enemyTop;
+	EnemyDefeat enemyDefeat;
 
 	private Collider2D enemyCollider;
 
@@ -13,20 +13,19 @@ public class EnemyControl : MonoBehaviour {
 	private Animator myAnim;
 	public bool collisions = false;
 
-	public EnemyDefeat dead;
-
 	// Use this for initialization
 	void Start () {
-		enemyDead = enemyTop.GetComponent<EnemyDefeat> ();
-
 		myAnim = GetComponent<Animator> ();
+
+		enemyTop = GameObject.Find ("tadTop");
+		enemyDefeat = enemyTop.GetComponent<EnemyDefeat> ();
 
 		enemyCollider = GetComponent<Collider2D> ();
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		if (!enemyDead.dead) {
+		if (!enemyDefeat.dead) {
 			if (myAnim.GetBool ("right") == false) {
 				transform.position += Vector3.left * speed * Time.deltaTime;
 			}
@@ -39,10 +38,9 @@ public class EnemyControl : MonoBehaviour {
 			}
 		}
 
-		if (enemyDead.dead) {
+		if (enemyDefeat.dead) {
 			enemyCollider.enabled = false;
 			transform.position += Vector3.up * deathHop * Time.deltaTime;
-			//Debug.Log ("dead" + dead);
 		}
 	}
 }

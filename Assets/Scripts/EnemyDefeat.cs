@@ -9,6 +9,7 @@ public class EnemyDefeat : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		
 		deathAnim = GetComponentInParent<Animator> ();
 		enemyCollider = GetComponent<Collider2D> ();
 	}
@@ -20,12 +21,11 @@ public class EnemyDefeat : MonoBehaviour {
 			deathAnim.SetBool ("dead", true);
 			deathAnim.SetBool ("smashed", false);
 		}
-			
+
 		if (dead) {
 			enemyCollider.enabled = false;
 		}
 
-		//Debug.Log ("dead3" + dead);
 	}
 
 	void OnCollisionEnter2D(Collision2D collision) {

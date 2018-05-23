@@ -3,21 +3,20 @@ using System.Collections;
 
 public class EnemyCollideWall : MonoBehaviour {
 
-	public GameObject enemyTop;
-	EnemyDefeat enemyDead;
-
-	public GameObject enemy;
+	GameObject enemy;
 	EnemyControl enemyControl;
-
-	public EnemyDefeat dead;
+	GameObject enemyTop;
+	EnemyDefeat enemyDefeat;
 
 	private Collider2D enemyCollider;
 
 	// Use this for initialization
 	void Start () {
-		enemyDead = enemyTop.GetComponent<EnemyDefeat> ();
 
+		enemy = GameObject.Find ("Tad");
 		enemyControl = enemy.GetComponent<EnemyControl> ();
+		enemyTop = GameObject.Find ("tadTop");
+		enemyDefeat = enemyTop.GetComponent<EnemyDefeat> ();
 
 		enemyCollider = GetComponent<Collider2D> ();
 	}
@@ -25,20 +24,16 @@ public class EnemyCollideWall : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-		if (enemyDead.dead) {
+		if (enemyDefeat.dead) {
 			enemyCollider.enabled = false;
-			//Debug.Log ("dead2" + dead);
 		}
+
 	}
 
 	void OnCollisionEnter2D(Collision2D collision) {
-		if (collision.collider.gameObject.layer == LayerMask.NameToLayer ("Ground") && !enemyDead.dead) {
+		if (collision.collider.gameObject.layer == LayerMask.NameToLayer ("Ground") && !enemyDefeat.dead) {
 			enemyControl.collisions = true;
 			Debug.Log ("Collisions" + enemyControl.collisions);
 		} 
-		if (collision.collider.gameObject.layer == LayerMask.NameToLayer ("Enemy") && !enemyDead.dead) {
-			enemyControl.collisions = true;
-			Debug.Log ("Collisions" + enemyControl.collisions);
-		}
 	}
 }

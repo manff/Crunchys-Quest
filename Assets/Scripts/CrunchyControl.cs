@@ -8,12 +8,10 @@ public class CrunchyControl : MonoBehaviour {
 	private Animator myAnim;
 	public float speed = 10;
 	public float bunnyJumpForce = 500f;
-	public float enemyJumpForce = 350f;
 	private int jumpsLeft = 1;
 	private float prevJumpTime = 0;
 	private float jumpTime;
 	private bool jumped = false;
-	private bool inAir;
 	public int coins = 0;
 
 	public bool left = false;
@@ -29,17 +27,18 @@ public class CrunchyControl : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if (Input.GetKeyDown(KeyCode.UpArrow) && jumpsLeft > 0 || jump && jumpsLeft > 0) {
-			//jumpsLeft = 0;
+			jumpsLeft = 0;
 			myRigidBody.AddForce (transform.up * bunnyJumpForce);
-
 			prevJumpTime = Time.fixedTime;
-			//jumped = true;
+			jumped = true;
 		}
 		if (Input.GetKey(KeyCode.RightArrow) || right) {
+			left = false;
 			myAnim.SetBool ("Right", true);
 			transform.position += Vector3.right * speed * Time.deltaTime;
 		}
 		if(Input.GetKey(KeyCode.LeftArrow) || left) {
+			right = false;
 			myAnim.SetBool("Right", false);
 			transform.position += Vector3.left * speed * Time.deltaTime;
 		}
@@ -51,9 +50,8 @@ public class CrunchyControl : MonoBehaviour {
 		if (collision.collider.gameObject.layer == LayerMask.NameToLayer ("Enemy")) {
 			//Application.LoadLevel (Application.loadedLevel);
 			Application.LoadLevel ("Title");
-		}
-		if (collision.collider.gameObject.layer == LayerMask.NameToLayer ("Ground")) {
-			if (inAir) {
+		} else if (collision.collider.gameObject.layer == LayerMask.NameToLayer ("Ground")) {
+			if (jumped) {
 				jumpTime = Time.fixedTime;
 				jumped = false;
 			}
@@ -61,22 +59,12 @@ public class CrunchyControl : MonoBehaviour {
 			if (jumpTime - prevJumpTime > 1) {
 				jumpsLeft = 1;
 			}
-			inAir = false;
-			Debug.Log ("In Air" + inAir);
 		}
 
 		if (collision.collider.gameObject.layer == LayerMask.NameToLayer ("Enemy Top")) {
 			jumpsLeft = 0;
-			myRigidBody.AddForce (transform.up * enemyJumpForce);
-			//jumpTime = Time.time;
-		}
-	}
-
-	void OnCollisionExit2D(Collision2D collision) {
-		if (collision.collider.gameObject.layer == LayerMask.NameToLayer ("Ground")) {
-			inAir = true;
-			jumpsLeft = 0;
-			Debug.Log ("In Air" + inAir);
+			myRigidBody.AddForce (transform.up * bunnyJumpForce);
+			jumpTime = Time.time;
 		}
 	}
 
@@ -90,11 +78,9 @@ public class CrunchyControl : MonoBehaviour {
 
 	public void Right() {
 		right = true;
-		left = false;
 	}
 	public void Left() {
 		left = true;
-		right = false;
 	}
 
 	public void RightStop() {
